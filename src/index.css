@@ -1,0 +1,69 @@
+:root{
+  --bg:#0f1a17; --accent:#33c49b; --text:#0f172a; --muted:#64748b; --card:#ffffff;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:#f5f7f9;color:var(--text)}
+
+.page{display:grid;grid-template-columns:320px 1fr;min-height:100%}
+
+.sidebar{
+  background: radial-gradient(70% 70% at 30% 20%, #22352f, var(--bg));
+  color:#e6f2ee; padding:28px 22px; display:flex; flex-direction:column; gap:22px;
+}
+.avatar-wrap{display:flex;justify-content:center;margin-top:8px}
+.avatar{
+  width:165px;height:165px;border-radius:999px;object-fit:cover;
+  border:4px solid rgba(255,255,255,.1); box-shadow:0 6px 18px rgba(0,0,0,.25)
+}
+.name{margin:0; font-size:28px; font-weight:800}
+.title{margin:0; opacity:.9}
+
+.block{margin-top:6px}
+.block-title{margin:0 0 10px; font-size:14px; text-transform:uppercase; letter-spacing:.8px; color:#c8e9df}
+.list{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.list-item{display:flex; gap:10px; align-items:flex-start; line-height:1.35}
+.list-item .ico{color:var(--accent); margin-top:2px}
+
+.content{padding:32px; display:flex; flex-direction:column; gap:22px}
+
+.actions{display:flex; justify-content:flex-end}
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  background:#0b6b57; color:#fff; border:none; padding:10px 14px; border-radius:10px; cursor:pointer;
+  box-shadow:0 6px 16px rgba(11,107,87,.25);
+}
+.btn:hover{opacity:.9}
+
+.section{
+  background: var(--card); border-radius:16px; padding:20px 22px; box-shadow: 0 8px 24px rgba(15,23,42,.06);
+}
+.section-head{display:flex; align-items:center; gap:10px; margin-bottom:10px}
+.section-ico{color:var(--accent); font-size:22px; display:flex}
+.section h2{margin:0; font-size:20px}
+.section .muted{color:var(--muted)}
+
+.edu{display:grid; grid-template-columns: 140px 1fr; gap:16px}
+.edu-time{font-weight:700}
+.edu-school{margin:0 0 4px}
+
+.chips{display:flex; flex-wrap:wrap; gap:10px; list-style:none; padding:0; margin:0}
+.chip{background:#eef7f4; color:#0b3b2d; border:1px solid #cfeee4; padding:8px 12px; border-radius:999px; font-weight:600}
+
+.proj{padding-left:18px; margin:0}
+.proj a{color:#0b6b57; text-decoration:none}
+.proj a:hover{text-decoration:underline}
+
+@media (max-width: 960px){
+  .page{grid-template-columns:1fr}
+  .content{padding:20px}
+  .edu{grid-template-columns:1fr}
+}
+
+/* In PDF */
+@media print {
+  .no-print { display: none !important; }
+  body { background:#fff; }
+  .page { grid-template-columns: 30% 70%; }
+  .section { box-shadow:none; }
+}
